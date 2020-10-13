@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#SBATCH -n 8 
+#SBATCH --output va-%A.out
+#SBATCH --mail-user your.email@doane.edu
+#SBATCH --mail-type ALL
+
+module load openmpi
+mpirun bin/mpi-va.mpi 1000000
