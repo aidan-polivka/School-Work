@@ -1,9 +1,9 @@
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CAPSTONE PROJECT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-# This is a folder containing the full android application I created for my senior project.
-# The important files are hard to find if you've never used android studio, so I've included
-# File paths in this ReadMe so viewers do not have to search for them.
+ This is a folder containing the full android application I created for my senior project.
+ The important files are hard to find if you've never used android studio, so I've included
+ file paths in this ReadMe so viewers do not have to search for them.
 
 ############################################################################################
 
