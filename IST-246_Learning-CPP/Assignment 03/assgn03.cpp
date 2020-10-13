@@ -1,4 +1,3 @@
-
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -6,57 +5,93 @@
 
 int main() {
     using namespace std;
-    
-    // initialize lists L and M with pseudorandom numbers
     srand(time(0));
-    SLL<int> L;
-    SLL<int> M;
     
-    // case 1: L and M have the same number of elements
-    cout << "Case 1: " << endl;
-    for(int i = 0; i < 5; i++) {
-        L.add(rand() % 100);
-        M.add(rand() % 100 + 100);
-    }
-    cout << "\tL:\t" << L << endl;
-    cout << "\tM:\t" << M << endl;
-    SLL<int> LM1(L, M);
-    cout << "\tLM:\t" << LM1 << endl;
+    //create the two individual lists
+    SLL<int> list_L;
+    SLL<int> list_M;
+    SLL<int> list_LM;
     
-    // case 2: |L| < |M|
-    cout << "\nCase 2: " << endl;
-    L.clear();
-    M.clear();
-    for(int i = 0; i < 5; i++) {
-        L.add(rand() % 100);
-        M.add(rand() % 100 + 100);
-    }
-    M.add(rand() % 100 + 100);
-    M.add(rand() % 100 + 100);
-    cout << "\tL:\t" << L << endl;
-    cout << "\tM:\t" << M << endl;
-    SLL<int> LM2(L, M);
-    cout << "\tLM:\t" << LM2 << endl;
+
     
-    // case 3: |L| < |M|; should cause an exception
-    cout << "\nCase 3: " << endl;
-    L.clear();
-    M.clear();
-    for(int i = 0; i < 5; i++) {
-        L.add(rand() % 100);
-        M.add(rand() % 100 + 100);
-    }
-    L.add(rand() % 100);
-    cout << "\tL:\t" << L << endl;
-    cout << "\tM:\t" << M << endl;
-    try {
-        SLL<int> LM3(L, M);
-        cout << "\tLM:\t" << LM3 << endl;
-    } catch(out_of_range oor) {
-        cout << "\tCannot merge L and M!" << endl;
-        cout << "\t" << oor.what() << endl;
-    }
+  //Create test arrays
+  int case1_L [5] = {32,85,80,83,77};
+  int case1_M [5] = {136,113,166,105,171};  
+  
+  int case2_L[5] = {61,61,44,47,22};
+  int case2_M[7] = {148,157,153,138,197,150,125};
+  
+  int case3_L[6] = {63,92,95,13,24,84};
+  int case3_M[5] = {138,123,118,196,198};
+  
+//Case 1
+  cout << "Case 1: \n";
+  
+  //add elements to the lists
+  for (int ints : case1_L){
+    list_L.add(ints);
+  }
+    for (int ints : case1_M){
+    list_M.add(ints);
+  }
     
+    //output lists
+    cout << list_L << endl;
+    cout << list_M << endl; 
+    
+    list_LM.merge(list_L,list_M);
+    cout << list_LM << endl;
+    
+    //clear lists
+    list_L.clear();
+    list_M.clear();
+    
+    
+    
+//Case 2
+  cout << "Case 2: \n";
+  
+  //add elements to the lists
+  for (int ints : case2_L){
+    list_L.add(ints);
+  }
+    for (int ints : case2_M){
+    list_M.add(ints);
+  }
+    
+    //output lists
+    cout << list_L << endl;
+    cout << list_M << endl; 
+    
+    list_LM.merge(list_L,list_M);
+    cout << list_LM << endl;
+
+    //clear lists
+    list_L.clear();
+    list_M.clear();
+    
+//Case 3
+  cout << "Case 3: \n";
+  
+  //add elements to the lists
+  for (int ints : case3_L){
+    list_L.add(ints);
+  }
+    for (int ints : case3_M){
+    list_M.add(ints);
+  }
+    
+    //output lists
+    cout << list_L << endl;
+    cout << list_M << endl; 
+    
+    list_LM.merge(list_L,list_M);
+    cout << list_LM << endl;
+    
+    //clear lists
+    list_L.clear();
+    list_M.clear();    
+    list_LM.clear();
     
     return EXIT_SUCCESS;
 }

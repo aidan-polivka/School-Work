@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Final App</string>
+    <string name="button2">Send Image</string>
+    <string name="button">Select Image from Gallery</string>
+    <string name="button3">Save</string>
+    <string name="imageView2">imageView2</string>
+    <string name="imageView">imageView</string>
+    <string name="title_activity_second">Second</string>
+    <string name="button4">Invert</string>
+    <string name="button5">Play</string>
+    <string name="button6">Pause</string>
+    <string name="button7">Stop</string>
+    <string name="button8">Other</string>
+    <string name="button9">Reset</string>
+    <string name="button10">FishEye</string>
+    <string name="textView">Media Player</string>
+    <string name="textView2">Image Processing</string>
+
+</resources>

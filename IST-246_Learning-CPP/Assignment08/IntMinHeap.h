@@ -19,6 +19,16 @@ public:
    * Create a new min-heap.
    */
   IntMinHeap();
+  
+  /**
+   * Create a new min-heap from array.
+   */
+  IntMinHeap(int* pA, unsigned n);
+  
+  /**
+   * 
+   */
+  void toSortedArray(int* pA, unsigned n);
 
   /**
    * Create a new min-heap just like an existing one.
@@ -170,6 +180,28 @@ IntMinHeap::IntMinHeap() {
   // add a default node to the vector, consuming location 0,
   // so our math can use index 1 as the start
   vec.push_back(INT_MAX);
+}
+
+/*
+ *
+ */
+IntMinHeap::IntMinHeap(int* pA, unsigned n) {
+  vec.push_back(0);
+  for(unsigned i = 0; i < n; i++) {
+    vec.push_back(pA[i]);
+  }
+  for(unsigned i = n/2; i >= 1; i--) {
+    minHeapify(i);
+  }
+}
+
+/*
+ *
+ */
+void IntMinHeap::toSortedArray(int* pA, unsigned n) {
+  for(unsigned i = 0; i < n; i++) {
+    pA[i] = removeMin();
+  }
 }
 
 /*
